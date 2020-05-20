@@ -32,7 +32,6 @@ class Auth extends Component {
   };
 
   render() {
-    console.log("[Ath.js] render ...");
     let emailError = null;
     let emailExists = null;
     let passwordError = null;

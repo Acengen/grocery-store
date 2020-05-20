@@ -53,7 +53,6 @@ class Contacts extends Component {
   };
 
   render() {
-    console.log("[Contacts.js] render...");
     if (this.state.ordered) {
       return <Redirect to="/" />;
     }

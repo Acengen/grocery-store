@@ -217,4 +217,25 @@
   text-decoration: none !important;
   color: #fbfbfb;
 }
+
+@media (max-width: 450px) {
+  .footer div {
+    -ms-grid-column-align: left;
+        justify-self: left;
+  }
+  .logout-msg {
+    padding: 0px 20px;
+  }
+  .logout-button button {
+    background-color: #d04425;
+    color: #fbfbfb;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    font-size: 15px;
+  }
+  .navigations a:not(.right) {
+    display: block;
+  }
+}
 /*# sourceMappingURL=main.css.map */

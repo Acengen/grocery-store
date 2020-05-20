@@ -4,7 +4,6 @@ import TotalPrice from "../totalPrice/TotalPrice";
 import LinkToForm from "./LinkToForm/LinkToForm";
 
 const OrderedProducts = ({ selectedOrders, remove, total, authorized }) => {
-  console.log("[orderedProducts.js] render ...");
   const selected = selectedOrders.map((selectedOrder, index) => {
     return (
       <OrderedItems

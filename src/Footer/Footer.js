@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footer">
-      <div style={{ justifySelf: "right" }}>
+      <div>
         <h4>Contacts</h4>
         <p>Mobile: +969 666 666</p>
         <p>Email: test@test.com</p>
@@ -21,7 +21,7 @@ const Footer = () => {
           <Link to="/orders">Order Form</Link>
         </p>
       </div>
-      <div style={{ justifySelf: "left" }}>
+      <div>
         <h4>Other Usefull Links:</h4>
         <p>
           <a href="https://en.wikipedia.org/wiki/Carrot">Carrot wiki</a>

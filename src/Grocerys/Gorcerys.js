@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import GroceryContext from "../Context/GroceryContext";
 
 const Gorcerys = ({ porducts }) => {
-  console.log("[Grocerys.js]");
   const context = useContext(GroceryContext);
   const grocerys = porducts.map((product) => {
     return (

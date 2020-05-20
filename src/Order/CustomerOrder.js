@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import Customer from "./Customer";
 import LinkToLogin from "../Navbar/LinkToLogin";
-import Spinner from "../Spinner/Spinner";
 
 class CustomerOrder extends Component {
   state = {
@@ -33,8 +32,6 @@ class CustomerOrder extends Component {
   };
 
   render() {
-    console.log(`[CustomerOrder.js]`);
-
     const custOrders = this.state.orders.map((order) => {
       return (
         <Customer
@@ -44,15 +41,12 @@ class CustomerOrder extends Component {
         />
       );
     });
+
     return (
       <div>
-        {this.state.loading ? (
-          <Spinner />
-        ) : (
-          <p className="text-center">{this.state.error}</p>
-        )}
+        <p className="text-center">{this.state.error}</p>
         {custOrders}
-        <LinkToLogin />
+        {!this.props.authorized ? <LinkToLogin /> : null}
       </div>
     );
   }

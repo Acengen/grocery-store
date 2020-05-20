@@ -122,7 +122,7 @@ class Order extends Component {
   clearTokenForLogout = () => {
     this.setState({
       idToken: null,
-      logoutMsg: "You have been successfully Logged out",
+      logoutMsg: "Logged out",
       authorized: false,
     });
 
@@ -144,7 +144,6 @@ class Order extends Component {
   };
 
   render() {
-    console.log(`${this.state.authorized} - authorization`);
     const { porducts, selectedOrders, total } = this.state;
     return (
       <div className="orders">

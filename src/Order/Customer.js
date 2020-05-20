@@ -2,7 +2,6 @@ import React from "react";
 
 const Customer = (props) =>
   props.order.map((ord) => {
-    console.log(ord);
     return (
       <div
         className="card"
