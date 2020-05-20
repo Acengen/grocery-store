@@ -1,0 +1,220 @@
+.container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.navigations {
+  background-color: #558347;
+  overflow: hidden;
+}
+
+.navigations a {
+  color: #efedef;
+  font-weight: bold;
+  padding: 20px;
+  text-decoration: none !important;
+  display: block;
+  float: left;
+}
+
+.navigations .right {
+  display: block;
+  float: right;
+}
+
+.navigations .active {
+  border-bottom: 5px solid #fbfbfb;
+}
+
+.grocerys {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+}
+
+.grocerys .card {
+  width: 300px;
+}
+
+.grocerys .grocery-button {
+  border: none;
+  padding: 5px 10px;
+  background-color: #d04425;
+  color: #fbfbfb;
+  font-weight: bold;
+}
+
+.orders {
+  position: relative;
+}
+
+.orders .total-price {
+  font-weight: bold;
+  color: black;
+  padding: 10px;
+}
+
+.selectedProducts {
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.selectedProducts .ordered-button {
+  border: none;
+  padding: 0px 10px;
+  background-color: #d04425;
+  color: #fbfbfb;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.selectedProducts ul {
+  padding: 0 !important;
+  text-align: center;
+}
+
+.link-to-form {
+  text-align: center;
+}
+
+.link-to-form a {
+  text-decoration: none !important;
+  background-color: #f0bd6b;
+  color: #fbfbfb;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.link-to-AUTH {
+  text-align: center;
+}
+
+.link-to-AUTH a {
+  text-decoration: none !important;
+  background-color: #babbba;
+  color: #fbfbfb;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+
+.link-to-login {
+  border: none;
+  padding: 5px 10px;
+  background-color: #f0bd6b;
+}
+
+.link-to-login a {
+  text-decoration: none !important;
+  color: #fbfbfb;
+  font-weight: bold;
+}
+
+.contacts-button {
+  border: none;
+  padding: 5px 10px;
+  background-color: #f0bd6b;
+  color: #fbfbfb;
+  font-weight: bold;
+}
+
+.remove-button {
+  border: none;
+  padding: 5px 10px;
+  background-color: crimson;
+  color: #fbfbfb;
+  font-weight: bold;
+}
+
+.order-div {
+  margin-top: 50px;
+}
+
+.order-div .order-form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.order-div .order-form input {
+  width: 100%;
+}
+
+.login-form {
+  margin-top: 50px;
+}
+
+.login-form form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.login-form form input {
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.login-form form button {
+  border: none;
+  padding: 5px 10px;
+  background-color: #f0bd6b;
+  color: white;
+  margin-top: 5px;
+}
+
+.sign-btn {
+  margin: auto;
+  border: none;
+  background-color: transparent;
+  color: #f6416c;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.logout-button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.logout-button button {
+  background-color: #d04425;
+  color: #fbfbfb;
+  padding: 20px;
+  font-weight: bold;
+  border: none;
+  font-size: 20px;
+}
+
+.logout-msg {
+  position: fixed;
+  bottom: 0;
+  padding: 0px 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #d04425;
+  color: #fbfbfb;
+  z-index: 999;
+}
+
+.footer {
+  background-color: #558347;
+  padding: 10px;
+  margin-top: 50px;
+  display: -ms-grid;
+  display: grid;
+  color: #fbfbfb;
+  -ms-grid-columns: (minmax(240px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  justify-items: center;
+}
+
+.footer a {
+  text-decoration: none !important;
+  color: #fbfbfb;
+}
+/*# sourceMappingURL=main.css.map */
