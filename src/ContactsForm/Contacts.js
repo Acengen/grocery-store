@@ -21,6 +21,7 @@ class Contacts extends Component {
       city: this.state.city,
       zip: this.state.zip,
       orders: this.props.selectedOrders,
+      userId: Math.random(),
     };
 
     if (
