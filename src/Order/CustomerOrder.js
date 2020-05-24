@@ -31,17 +31,23 @@ class CustomerOrder extends Component {
       .catch((error) => this.setState({ error: "Login to see your orders" }));
   };
 
+  removeOrder = () => {
+    this.setState((prevState) =>
+      prevState.orders.filter((order) => console.log(order))
+    );
+  };
+
   render() {
-    const custOrders = this.state.orders.map((order) => {
+    const custOrders = this.state.orders.map((order, index) => {
       return (
         <Customer
-          deleteRequest={this.deleteRequest}
+          index={index}
           order={order.orders}
           key={Math.random() * 1000}
+          removeOrder={this.removeOrder}
         />
       );
     });
-
     return (
       <div>
         <p className="text-center">{this.state.error}</p>

@@ -2,7 +2,7 @@ import React from "react";
 
 const OrderedItems = (props) => {
   return (
-    <div className="text-left">
+    <div className="text-left" key={props.contactId}>
       <ul style={{ listStyle: "none" }}>
         <li>
           {props.selectedOrder.name}{" "}

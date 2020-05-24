@@ -52,6 +52,7 @@ class Order extends Component {
     alert: "",
     errorMessage: "",
     logoutMsg: "",
+    
   };
 
   static contextType = GroceryContext;
@@ -144,6 +145,7 @@ class Order extends Component {
   };
 
   render() {
+    console.log(this.state.contactId);
     const { porducts, selectedOrders, total } = this.state;
     return (
       <div className="orders">
@@ -174,6 +176,7 @@ class Order extends Component {
           render={(props) => (
             <OrderedProducts
               remove={this.remove}
+              contactId={this.state.contactId}
               selectedOrders={selectedOrders}
               total={total}
               authorized={this.state.authorized}

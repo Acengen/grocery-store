@@ -3,7 +3,13 @@ import OrderedItems from "./OrderedItems";
 import TotalPrice from "../totalPrice/TotalPrice";
 import LinkToForm from "./LinkToForm/LinkToForm";
 
-const OrderedProducts = ({ selectedOrders, remove, total, authorized }) => {
+const OrderedProducts = ({
+  selectedOrders,
+  remove,
+  total,
+  authorized,
+  contactId,
+}) => {
   const selected = selectedOrders.map((selectedOrder, index) => {
     return (
       <OrderedItems
@@ -11,6 +17,7 @@ const OrderedProducts = ({ selectedOrders, remove, total, authorized }) => {
         remove={remove}
         index={index}
         key={Math.random() * 1000}
+        contactId={contactId}
       />
     );
   });

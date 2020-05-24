@@ -16,6 +16,9 @@ const Customer = (props) =>
         <div className="card-body">
           <h4>{ord.name}</h4>
           <p>${ord.price}</p>
+          <button onClick={() => props.removeOrder()} className="delete-btn">
+            remove
+          </button>
         </div>
       </div>
     );
