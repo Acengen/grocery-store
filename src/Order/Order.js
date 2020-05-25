@@ -52,7 +52,6 @@ class Order extends Component {
     alert: "",
     errorMessage: "",
     logoutMsg: "",
-    
   };
 
   static contextType = GroceryContext;
@@ -95,7 +94,7 @@ class Order extends Component {
     let url =
       "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDFwsvaCT8sMufl5wko9QfCkdR3kVqu2nQ";
 
-    if (!isSign) {
+    if (isSign) {
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDFwsvaCT8sMufl5wko9QfCkdR3kVqu2nQ";
     }

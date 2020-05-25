@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 
 class Auth extends Component {
   state = {
     email: "",
     password: "",
-    isSign: true,
+    isSign: false,
   };
 
   submitHandler = (e) => {
@@ -23,13 +22,33 @@ class Auth extends Component {
     });
   };
 
-  switchAuthHandler = () => {
-    this.setState((prevState) => {
-      return {
-        isSign: !prevState.isSign,
-      };
+  signIn = () => {
+    this.setState({
+      isSign: true,
     });
   };
+
+  signOut = () => {
+    this.setState({
+      isSign: false,
+    });
+  };
+
+  renderButtonContentOnAuth() {
+    if (this.state.isSign) {
+      return (
+        <button onClick={this.signOut} className="sign-btn">
+          Sign out
+        </button>
+      );
+    } else {
+      return (
+        <button onClick={this.signIn} className="sign-btn">
+          Sign in
+        </button>
+      );
+    }
+  }
 
   render() {
     let emailError = null;
@@ -51,13 +70,8 @@ class Auth extends Component {
       );
     }
 
-    let redirect = null;
-    if (this.props.authorized) {
-      redirect = <Redirect to="/" />;
-    }
     return (
       <div className="login-form">
-        {redirect}
         <h4 className="text-center">Login Form</h4>
         <form onSubmit={this.submitHandler}>
           <input
@@ -76,13 +90,9 @@ class Auth extends Component {
           />
           {passwordError}
           {passwordMissing}
-          <button>Submit</button>
+          <button>Forward</button>
         </form>
-        <div className="text-center">
-          <button onClick={() => this.switchAuthHandler()} className="sign-btn">
-            {this.state.isSign ? "Switch to sign in" : "Switch to sign up"}
-          </button>
-        </div>
+        <div className="text-center">{this.renderButtonContentOnAuth()}</div>
       </div>
     );
   }
