@@ -174,19 +174,13 @@
   font-weight: bold;
 }
 
-.logout-button {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
 .logout-button button {
   background-color: #d04425;
   color: #fbfbfb;
-  padding: 20px;
+  float: right;
   font-weight: bold;
   border: none;
-  font-size: 20px;
+  padding: 20px;
 }
 
 .logout-msg {

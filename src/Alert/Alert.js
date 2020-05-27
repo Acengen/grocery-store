@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ContextObject } from "../ContextAPI/ContextApi";
 
-const Alert = (props) => {
+const Alert = () => {
+  const context = useContext(ContextObject);
   return (
-    props.alert !== null && (
+    context.alert !== null && (
       <div
-        className={`alert alert-${props.alert.type} text-center font-weight-bold`}
+        className={`alert alert-${context.alert.type} text-center font-weight-bold`}
       >
-        {props.alert.msg}
+        {context.alert.msg}
       </div>
     )
   );

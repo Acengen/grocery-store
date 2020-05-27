@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Alert from "../Alert/Alert";
 import { Redirect } from "react-router-dom";
+import { ContextObject } from "../ContextAPI/ContextApi";
 
 class Contacts extends Component {
   state = {
@@ -13,6 +14,8 @@ class Contacts extends Component {
     orderedText: "ORDER COMPLETED",
   };
 
+  static contextType = ContextObject;
+
   submitHandler = (e) => {
     e.preventDefault();
     const postData = {
@@ -20,7 +23,8 @@ class Contacts extends Component {
       address: this.state.address,
       city: this.state.city,
       zip: this.state.zip,
-      orders: this.props.selectedOrders,
+      orders: this.context.selectedOrders,
+      userId: this.context.userId,
     };
 
     if (
@@ -29,9 +33,9 @@ class Contacts extends Component {
       this.state.city === "" ||
       this.state.zip === ""
     ) {
-      this.props.alertMessage("Please Fill empty fields", "warning");
+      this.context.alertMessage("Please Fill empty fields", "warning");
     } else {
-      this.props.alertMessage("Successfully orderd", "success ");
+      this.context.alertMessage("Successfully orderd", "success ");
       axios
         .post(
           "https://grocery-store-d17ed.firebaseio.com/orders.json",
@@ -58,10 +62,7 @@ class Contacts extends Component {
     return (
       <div className="order-div">
         <h4 className="text-center">Order Form</h4>
-        <Alert
-          alertMessage={this.props.alertMessage}
-          alert={this.props.alert}
-        />
+        <Alert />
         <form onSubmit={this.submitHandler} className="order-form">
           <label>Name</label>
           <input

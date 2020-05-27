@@ -1,19 +1,17 @@
 import React, { Component } from "react";
+import { ContextObject } from "../ContextAPI/ContextApi";
 
 class Auth extends Component {
   state = {
     email: "",
     password: "",
-    isSign: false,
   };
+
+  static contextType = ContextObject;
 
   submitHandler = (e) => {
     e.preventDefault();
-    this.props.signInForm(
-      this.state.email,
-      this.state.password,
-      this.state.isSign
-    );
+    this.context.signInForm(this.state.email, this.state.password);
   };
 
   inputChangeHandler = (e) => {
@@ -22,28 +20,16 @@ class Auth extends Component {
     });
   };
 
-  signIn = () => {
-    this.setState({
-      isSign: true,
-    });
-  };
-
-  signOut = () => {
-    this.setState({
-      isSign: false,
-    });
-  };
-
   renderButtonContentOnAuth() {
-    if (this.state.isSign) {
+    if (this.context.isSign) {
       return (
-        <button onClick={this.signOut} className="sign-btn">
+        <button onClick={this.context.signOut} className="sign-btn">
           Sign out
         </button>
       );
     } else {
       return (
-        <button onClick={this.signIn} className="sign-btn">
+        <button onClick={this.context.signIn} className="sign-btn">
           Sign in
         </button>
       );
@@ -55,19 +41,17 @@ class Auth extends Component {
     let emailExists = null;
     let passwordError = null;
     let passwordMissing = null;
-    if (this.props.errorMessage === "INVALID_EMAIL") {
-      emailError = <p className="text-center">{this.props.errorMessage}</p>;
+    if (this.context.errorMsg === "INVALID_EMAIL") {
+      emailError = <p className="text-center">{this.context.errorMsg}</p>;
     }
-    if (this.props.errorMessage === "EMAIL_EXISTS") {
-      emailExists = <p className="text-center">{this.props.errorMessage}</p>;
+    if (this.context.errorMsg === "EMAIL_EXISTS") {
+      emailExists = <p className="text-center">{this.context.errorMsg}</p>;
     }
-    if (this.props.errorMessage === "INVALID_PASSWORD") {
-      passwordError = <p className="text-center">{this.props.errorMessage}</p>;
+    if (this.context.errorMsg === "INVALID_PASSWORD") {
+      passwordError = <p className="text-center">{this.context.errorMsg}</p>;
     }
-    if (this.props.errorMessage === "MISSING_PASSWORD") {
-      passwordMissing = (
-        <p className="text-center">{this.props.errorMessage}</p>
-      );
+    if (this.context.errorMsg === "MISSING_PASSWORD") {
+      passwordMissing = <p className="text-center">{this.context.errorMsg}</p>;
     }
 
     return (

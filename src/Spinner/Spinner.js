@@ -4,7 +4,8 @@ import image from "./Bounce-Bar-Preloader-1.gif";
 const Spinner = () => (
   <img
     src={image}
-    style={{ width: "200px", margin: "auto", display: "block" }}
+    style={{ width: "400px", margin: "auto", display: "block" }}
+    alt="spinner"
   />
 );
 

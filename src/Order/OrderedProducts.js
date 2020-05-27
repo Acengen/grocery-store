@@ -1,34 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import OrderedItems from "./OrderedItems";
 import TotalPrice from "../totalPrice/TotalPrice";
 import LinkToForm from "./LinkToForm/LinkToForm";
+import { ContextObject } from "../ContextAPI/ContextApi";
 
-const OrderedProducts = ({
-  selectedOrders,
-  remove,
-  total,
-  authorized,
-  contactId,
-}) => {
-  const selected = selectedOrders.map((selectedOrder, index) => {
+const OrderedProducts = () => {
+  const context = useContext(ContextObject);
+  const selected = context.selectedOrders.map((selectedOrder, index) => {
     return (
       <OrderedItems
         selectedOrder={selectedOrder}
-        remove={remove}
+        remove={context.remove}
         index={index}
         key={Math.random() * 1000}
-        contactId={contactId}
       />
     );
   });
 
-  if (selectedOrders.length !== 0) {
+  if (context.selectedOrders.length !== 0) {
     return (
       <div className="selectedProducts">
         <h3 className="text-center">Your Order</h3>
         {selected}
-        <TotalPrice total={total} />
-        <LinkToForm authorized={authorized} />
+        <TotalPrice />
+        <LinkToForm />
       </div>
     );
   } else {

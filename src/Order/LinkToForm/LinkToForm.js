@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ContextObject } from "../../ContextAPI/ContextApi";
 
-const Button = (props) => {
-  if (props.authorized) {
+const Button = () => {
+  const context = useContext(ContextObject);
+  if (context.authorized) {
     return (
       <div className="link-to-form">
         <Link to="/orders">ORDER</Link>

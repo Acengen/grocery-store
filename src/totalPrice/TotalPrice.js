@@ -1,9 +1,10 @@
-import React from "react";
-
-const TotalPrice = (props) => {
+import React, { useContext } from "react";
+import { ContextObject } from "../ContextAPI/ContextApi";
+const TotalPrice = () => {
+  const context = useContext(ContextObject);
   return (
     <div className="total-price text-right">
-      <p>- ${props.total.toFixed(2)}</p>
+      <p>- ${context.total.toFixed(2)}</p>
     </div>
   );
 };

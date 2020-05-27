@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import GroceryContext from "../Context/GroceryContext";
+import { ContextObject } from "../ContextAPI/ContextApi";
 
-const Gorcerys = ({ porducts }) => {
-  const context = useContext(GroceryContext);
-  const grocerys = porducts.map((product) => {
+const Gorcerys = () => {
+  const context = useContext(ContextObject);
+  const grocerys = context.products.map((product) => {
     return (
       <div className="card" key={product.id}>
         <img
