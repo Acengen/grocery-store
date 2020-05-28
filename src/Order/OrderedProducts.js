@@ -6,11 +6,11 @@ import { ContextObject } from "../ContextAPI/ContextApi";
 
 const OrderedProducts = () => {
   const context = useContext(ContextObject);
+
   const selected = context.selectedOrders.map((selectedOrder, index) => {
     return (
       <OrderedItems
         selectedOrder={selectedOrder}
-        remove={context.remove}
         index={index}
         key={Math.random() * 1000}
       />

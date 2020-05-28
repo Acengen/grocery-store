@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ContextObject } from "../ContextAPI/ContextApi";
 
 const OrderedItems = (props) => {
+  const context = useContext(ContextObject);
   return (
     <div className="text-left" key={props.contactId}>
       <ul style={{ listStyle: "none" }}>
@@ -8,7 +10,9 @@ const OrderedItems = (props) => {
           {props.selectedOrder.name}{" "}
           <span>${props.selectedOrder.price} /kg</span>{" "}
           <button
-            onClick={() => props.remove(props.selectedOrder.price, props.index)}
+            onClick={() =>
+              context.remove(props.selectedOrder.price, props.index)
+            }
             className="ordered-button"
           >
             -
