@@ -85,7 +85,6 @@ const ContextProv = (props) => {
     let select = [...selectedOrders, product];
 
     setSelectedOrders(select);
-
     setTotal(newPrice);
   };
 
