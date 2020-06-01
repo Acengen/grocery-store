@@ -18,6 +18,7 @@ const Gorcerys = () => {
           <button
             onClick={() => context.totalPrice(product.price, product)}
             className="grocery-button"
+            data-test="add-btn"
           >
             +
           </button>

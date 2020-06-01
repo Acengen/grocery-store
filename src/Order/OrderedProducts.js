@@ -19,7 +19,7 @@ const OrderedProducts = () => {
 
   if (context.selectedOrders.length !== 0) {
     return (
-      <div className="selectedProducts">
+      <div className="selectedProducts" data-test="selected-products">
         <h3 className="text-center">Your Order</h3>
         {selected}
         <TotalPrice />

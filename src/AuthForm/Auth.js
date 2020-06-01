@@ -55,14 +55,15 @@ class Auth extends Component {
     }
 
     return (
-      <div className="login-form">
+      <div className="login-form" data-test="auth-component">
         <h4 className="text-center">Login Form</h4>
-        <form onSubmit={this.submitHandler}>
+        <form onSubmit={this.submitHandler} data-test="form-inputs">
           <input
             onChange={this.inputChangeHandler}
             type="email"
             id="email"
             placeholder="email"
+            data-test="inputs"
           />
           {emailExists}
           {emailError}
@@ -71,10 +72,11 @@ class Auth extends Component {
             type="password"
             id="password"
             placeholder="password"
+            data-test="inputs"
           />
           {passwordError}
           {passwordMissing}
-          <button>Forward</button>
+          <button data-test="submit">Forward</button>
         </form>
         <div className="text-center">{this.renderButtonContentOnAuth()}</div>
       </div>
