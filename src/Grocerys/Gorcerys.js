@@ -26,7 +26,11 @@ const Gorcerys = () => {
     );
   });
 
-  return <div className="grocerys">{grocerys}</div>;
+  return (
+    <div className="grocerys" data-test="products">
+      {grocerys}
+    </div>
+  );
 };
 
 export default Gorcerys;

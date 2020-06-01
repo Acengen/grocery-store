@@ -1,16 +1,20 @@
 import React from "react";
+import Enzyme, { shallow } from "enzyme";
+import EnzymeAdapter from "enzyme-adapter-react-16";
 
-import { configure, shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
-
+import { findItemsByAttr } from "../test/testUtils";
 import Navbar from "./Navbar";
-import NavbarItems from "./NavbarItems";
 
-configure({ adapter: new Adapter() });
+Enzyme.configure({ adapter: new EnzymeAdapter() });
 
-describe("<Navbar />", () => {
-  it("should render 1 Navbar elements", () => {
-    const wrapper = shallow(<Navbar />);
-    expect(wrapper.find(NavbarItems)).toHaveLength(1);
+const setup = (props) => {
+  return shallow(<Navbar {...props} />);
+};
+
+describe("testing Navbar", () => {
+  test("should render", () => {
+    const wrapper = setup();
+    const component = findItemsByAttr(wrapper, "navbar");
+    expect(component.length).toBe(1);
   });
 });

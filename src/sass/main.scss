@@ -9,6 +9,10 @@ button {
   outline: none !important;
 }
 
+input:focus {
+  outline: none !important;
+}
+
 .navigations {
   background-color: #558347;
   overflow: hidden;
