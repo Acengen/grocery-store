@@ -28,10 +28,10 @@ class Order extends Component {
             !this.context.authorized ? (
               <Fragment>
                 <p className="text-center">you need to login before order.</p>
-                <LinkToLogin success={true} data-test="link-to-login" />
+                <LinkToLogin />
               </Fragment>
             ) : (
-              <Contacts data-test="contacts" />
+              <Contacts />
             )
           }
         />

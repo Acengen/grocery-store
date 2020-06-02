@@ -60,9 +60,9 @@ class Contacts extends Component {
       return <Redirect to="/" />;
     }
     return (
-      <div className="order-div">
+      <div className="order-div" data-test="contacts">
         <h4 className="text-center">Order Form</h4>
-        <Alert />
+        <Alert data-test="alert" />
         <form onSubmit={this.submitHandler} className="order-form">
           <label>Name</label>
           <input
@@ -70,6 +70,7 @@ class Contacts extends Component {
             value={this.state.name}
             type="text"
             id="name"
+            data-test="inputContacts"
           />
           <label>Address</label>
           <input
@@ -77,6 +78,7 @@ class Contacts extends Component {
             value={this.state.address}
             type="text"
             id="address"
+            data-test="inputContacts"
           />
           <label>City</label>
           <input
@@ -84,6 +86,7 @@ class Contacts extends Component {
             value={this.state.city}
             type="text"
             id="city"
+            data-test="inputContacts"
           />
           <label>ZipCode</label>
           <input
@@ -91,8 +94,11 @@ class Contacts extends Component {
             value={this.state.zip}
             type="number"
             id="zip"
+            data-test="inputContacts"
           />
-          <button className="contacts-button">Order</button>
+          <button className="contacts-button" data-test="contactsBtn">
+            Order
+          </button>
         </form>
       </div>
     );
