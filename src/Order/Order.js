@@ -25,7 +25,7 @@ class Order extends Component {
           path="/orders"
           exact
           render={() =>
-            !this.context.authorized && this.props.auth ? (
+            !this.context.authorized ? (
               <Fragment>
                 <p className="text-center">you need to login before order.</p>
                 <LinkToLogin success={true} data-test="link-to-login" />

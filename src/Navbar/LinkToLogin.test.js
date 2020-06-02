@@ -29,15 +29,3 @@ describe("render", () => {
     expect(button.length).toBe(1);
   });
 });
-
-test("should component be render if success is true", () => {
-  const wrapper = setup({ success: true });
-  const component = findItemsByAttr(wrapper, "component-login");
-  expect(component.length).toBe(1);
-});
-
-test("should not render a component if success is false", () => {
-  const wrapper = setup({ success: false });
-  const component = findItemsByAttr(wrapper, "component-login");
-  expect(component.length).toBe(0);
-});

@@ -15,7 +15,7 @@ class App extends React.Component {
         <Container>
           <Navbar />
           <Route path="/" exact component={Header} />
-          <Route path="/" render={()=> <Order auth={true}/>} />
+          <Route path="/" component={Order} />
           <Route path="/" exact component={Footer} />
         </Container>
       </Router>
