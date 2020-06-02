@@ -7,11 +7,11 @@ import NavbarItems from "./NavbarItems";
 
 Enzyme.configure({ adapter: new EnzymeAdapter() });
 
-const defaultProp = { success: true };
+// const defaultProp = { success: true };
 
 const setup = (props) => {
-  const setupProps = { ...defaultProp, ...props };
-  return shallow(<NavbarItems {...setupProps} />);
+  // const setupProps = { ...defaultProp, ...props };
+  return shallow(<NavbarItems {...props} />);
 };
 
 describe("testing NavbarItems", () => {

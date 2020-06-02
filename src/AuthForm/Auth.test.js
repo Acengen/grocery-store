@@ -31,7 +31,7 @@ describe("testing Auth.js", () => {
 });
 
 describe("testing a state in Auth.js", () => {
-  test("email and password are string at start", () => {
+  test("email and password are empty at start", () => {
     const wrapper = setup();
     const email = wrapper.state("email");
     const password = wrapper.state("password");

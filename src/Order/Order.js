@@ -15,7 +15,7 @@ class Order extends Component {
 
   render() {
     return (
-      <div className="orders">
+      <div className="orders" data-test="order">
         <Route path="/customer" exact component={CustomerOrder} />
         <Route path="/auth" exact component={Auth} />
         <Route path="/" component={LogoutMsg} />
@@ -25,13 +25,13 @@ class Order extends Component {
           path="/orders"
           exact
           render={() =>
-            !this.context.authorized ? (
+            !this.context.authorized && this.props.auth ? (
               <Fragment>
                 <p className="text-center">you need to login before order.</p>
-                <LinkToLogin />
+                <LinkToLogin success={true} data-test="link-to-login" />
               </Fragment>
             ) : (
-              <Contacts />
+              <Contacts data-test="contacts" />
             )
           }
         />
